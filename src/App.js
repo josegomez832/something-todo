@@ -19,7 +19,7 @@ function App() {
   const [error, setError] = useState('');
 
   useEffect(() =>{
-    axios.get('http://www.boredapi.com/api/activity/')
+    axios.get('https://www.boredapi.com/api/activity/')
       .then(response =>{
         setData(response.data);
         return axios.get(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_YOUTUBE_API_KEY}&part=snippet&maxResults=4&q=${response.data.activity}`)
